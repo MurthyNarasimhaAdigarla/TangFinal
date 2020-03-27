@@ -20,6 +20,13 @@ Feature: To Get keys and Values in Tangerine Json file
     Given To Read a "Tangerine" JSON file
     And To retrieve the Json Array of "subOrders" key
 
-  Scenario: test
+
+  Scenario: To get the values of sourceInfo key in Tangerine Json file
     Given To Read a "Tangerine" JSON file
-    When To get all keys present in the Json file
+    When To retrieve the Json Array of sourceInfo key only
+
+  Scenario: To get values for the given key and child key
+    Given To Read a "Tangerine" JSON file
+    When To retrieve the Json for the given key "customer" and child key "name"
+
+

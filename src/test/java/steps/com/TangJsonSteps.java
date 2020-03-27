@@ -1,8 +1,10 @@
 package steps.com;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
@@ -114,5 +116,26 @@ public class TangJsonSteps {
 
 
 
+    }
+
+    @When("^To retrieve the Json Array of sourceInfo key only$")
+    public void toRetrieveTheJsonArrayOfSourceInfoKeyOnly() {
+
+        JSONObject valueofsourceInfo = (JSONObject) jsonObject.get("sourceInfo");
+        System.out.println("value of Given Object is  :: " + valueofsourceInfo);
+
+        String source = (String) valueofsourceInfo.get("source");
+        System.out.println("Value of Source is "  + source);
+    }
+
+
+
+    @When("^To retrieve the Json for the given key \"([^\"]*)\" and child key \"([^\"]*)\"$")
+    public void toRetrieveTheJsonForTheGivenKeyAndChildKey(String parentKey, String childKey) throws Throwable {
+        JSONObject dataofParentKey = (JSONObject) jsonObject.get(parentKey);
+        System.out.println("value of Given Object is  :: " + dataofParentKey);
+
+        Object childkeyValue =  dataofParentKey.get(childKey);
+        System.out.println("Value of Source is "  + childkeyValue);
     }
 }
