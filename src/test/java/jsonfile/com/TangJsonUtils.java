@@ -7,9 +7,9 @@ import org.json.simple.parser.ParseException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Tang_gettingallJsonKeys_and_values {
+public class TangJsonUtils {
 
-    static JSONObject jsonObject;
+   public static JSONObject jsonObject;
     static Object obj;
     static FileReader jsonfile;
     static String JsonResponseinString;
@@ -17,6 +17,7 @@ public class Tang_gettingallJsonKeys_and_values {
     public static void main(String[] args) throws IOException, ParseException {
 
         parsingTheJson();
+        gettingAllindividualKeys() ;
 
     }
 
@@ -40,7 +41,7 @@ public class Tang_gettingallJsonKeys_and_values {
         Object orderNumber = jsonObject.get("orderNumber");
         System.out.println("orderNumber is " + orderNumber);
 
-        String versionNumber = (String) jsonObject.get("versionNumber");
+       Object versionNumber =  jsonObject.get("versionNumber");
         System.out.println("versionNumber is " + versionNumber);
 
         Object companyId = jsonObject.get("companyId");

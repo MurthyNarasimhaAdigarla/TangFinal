@@ -7,15 +7,14 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Set;
-import static jsonfile.com.Tang_gettingallJsonKeys_and_values.*;
+import static jsonfile.com.TangJsonUtils.*;
 
 
-public class angg {
-    static JSONObject jsonObject;
+public class TangJsonSteps {
+
 
 
 
@@ -28,7 +27,7 @@ public class angg {
 
     @Then("^To get all keys present in the Json file$")
     public void toGetAllKeysPresentInTheJsonFile() throws IOException, ParseException {
-        parsingTheJson();
+
         Set all_Keys = jsonObject.keySet();
         int total_keys_in_jsonFile = all_Keys.size();
         System.out.println("Total Keys In JsonFile are::  " + total_keys_in_jsonFile);

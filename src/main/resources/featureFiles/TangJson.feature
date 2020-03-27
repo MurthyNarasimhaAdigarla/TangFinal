@@ -8,8 +8,7 @@ Feature: To Get keys and Values in Tangerine Json file
     Then To get all the data from existing objects in json file
     Then To get all the data from existing arrays in json file
 
-
-  Scenario:  To Get  Values in Tangerine Json file for given key
+  Scenario: To Get  Values in Tangerine Json file for given key
     Given To Read a "Tangerine" JSON file
     And To get a value of "versionNumber" key
 
@@ -21,7 +20,6 @@ Feature: To Get keys and Values in Tangerine Json file
     Given To Read a "Tangerine" JSON file
     And To retrieve the Json Array of "subOrders" key
 
-
-    Scenario: test
-      Given To Read a "Tangerine" JSON file
-      When To get all keys present in the Json file
+  Scenario: test
+    Given To Read a "Tangerine" JSON file
+    When To get all keys present in the Json file
