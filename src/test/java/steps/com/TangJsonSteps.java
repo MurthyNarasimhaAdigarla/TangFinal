@@ -1,6 +1,5 @@
 package steps.com;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -12,18 +11,20 @@ import org.json.simple.parser.ParseException;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Set;
+import java.util.logging.Logger;
+
 import static jsonfile.com.TangJsonUtils.*;
 
 
 public class TangJsonSteps {
 
-
-
+    public static final Logger log = Logger.getLogger("murthyLogger");
 
     @Given("^To Read a \"([^\"]*)\" JSON file$")
     public void toReadAJSONFile(String fileName) throws Throwable {
 
         parsingTheJson();
+        log.info("Parsed the json file");
 
     }
 
@@ -115,27 +116,25 @@ public class TangJsonSteps {
         }
 
 
-
     }
 
     @When("^To retrieve the Json Array of sourceInfo key only$")
     public void toRetrieveTheJsonArrayOfSourceInfoKeyOnly() {
 
         JSONObject valueofsourceInfo = (JSONObject) jsonObject.get("sourceInfo");
-        System.out.println("value of Given Object is  :: " + valueofsourceInfo);
+        System.out.println("value of Given parent key  is  :: " + valueofsourceInfo);
 
         String source = (String) valueofsourceInfo.get("source");
-        System.out.println("Value of Source is "  + source);
+        System.out.println("Value of Child key value is " + source);
     }
-
 
 
     @When("^To retrieve the Json for the given key \"([^\"]*)\" and child key \"([^\"]*)\"$")
     public void toRetrieveTheJsonForTheGivenKeyAndChildKey(String parentKey, String childKey) throws Throwable {
         JSONObject dataofParentKey = (JSONObject) jsonObject.get(parentKey);
-        System.out.println("value of Given Object is  :: " + dataofParentKey);
+        System.out.println("value of Given " + parentKey + " parent key  is  :: " + dataofParentKey);
 
-        Object childkeyValue =  dataofParentKey.get(childKey);
-        System.out.println("Value of Source is "  + childkeyValue);
+        Object childkeyValue = dataofParentKey.get(childKey);
+        System.out.println("Value of Child key " + childKey + " is " + childkeyValue);
     }
 }

@@ -27,6 +27,6 @@ Feature: To Get keys and Values in Tangerine Json file
 
   Scenario: To get values for the given key and child key
     Given To Read a "Tangerine" JSON file
-    When To retrieve the Json for the given key "customer" and child key "name"
+    When To retrieve the Json for the given key "sourceInfo" and child key "source"
 
 
