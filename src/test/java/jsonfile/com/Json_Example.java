@@ -27,9 +27,8 @@ public class Json_Example {
             // Iterators differ from enumerations in two ways:
             // 1. Iterators allow the caller to remove elements from the underlying collection during the iteration with well-defined semantics.
             // 2. Method names have been improved.
-            Iterator<JSONObject> iterator = companyList.iterator();
-            while (iterator.hasNext()) {
-                System.out.println(iterator.next());
+            for (JSONObject object : (Iterable<JSONObject>) companyList) {
+                System.out.println(object);
             }
         } catch (Exception e) {
             e.printStackTrace();
